@@ -64,7 +64,7 @@ def _check_output(args, inputstr=None):
 
 
 def _invoke_codesign(codesign_path, identity, codesign_args, full_path_to_sign):
-  cmd = [codesign_path, "-v", "--sign", identity
+  cmd = [codesign_path, "--deep", "-v", "--sign", identity
         ] + codesign_args + [full_path_to_sign]
   stdout, stderr = _check_output(cmd)
   if stdout:
